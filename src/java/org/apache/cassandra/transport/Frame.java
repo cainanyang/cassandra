@@ -1,4 +1,3 @@
-
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -65,7 +64,7 @@ public class Frame
         int length = fullFrame.readInt();
         assert length == fullFrame.readableBytes();
 
-        // version first byte is the "direction" of the frame (request or response)
+        // version first bit is the "direction" of the frame (request or response)
         Message.Direction direction = Message.Direction.extractFromVersion(version);
         version = version & 0x7F;
 
